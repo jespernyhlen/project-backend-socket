@@ -8,6 +8,8 @@ let server = app.listen(8777, function() {
 let socket = require('socket.io');
 let io = socket(server);
 
+import stock from './stock.js';
+
 io.origins(['https://jespernyhlenjs.me:443']);
 
 var stone = {
