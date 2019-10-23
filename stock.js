@@ -13,10 +13,6 @@ var stock = {
         let variance = input.variance;
         let price = start * rate + variance * stock.randomAroundZero();
 
-        if (price <= 0) {
-            return 0;
-        }
-
         return Math.round(price * 100) / 100;
     }
 };
