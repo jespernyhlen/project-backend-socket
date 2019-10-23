@@ -1,7 +1,6 @@
-import stock from './stock.js';
-
 const express = require('express');
 const app = express();
+const stock = require('./stock.js');
 
 let server = app.listen(8777, function() {
     console.log('server is running on port 8300');
