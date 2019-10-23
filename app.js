@@ -51,7 +51,7 @@ setInterval(function() {
     });
 
     io.emit('stocks', items);
-}, 2000);
+}, 1000);
 
 server.listen(8777);
 console.log('Listening on 8777');
