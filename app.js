@@ -3,6 +3,8 @@ var http = require('http').Server(app);
 const io = require('socket.io')(http);
 const stock = require('./stock.js');
 
+io.origins(['https://project-frontend.jespernyhlenjs.me:443']);
+
 var stone = {
     name: 'stone',
     rate: 1.001,
@@ -47,6 +49,6 @@ setInterval(function() {
     io.emit('stocks', items);
 }, 500);
 
-http.listen(1337, function() {
-    console.log('listening on port:1337');
+http.listen(8777, function() {
+    console.log('listening on port:8777');
 });
