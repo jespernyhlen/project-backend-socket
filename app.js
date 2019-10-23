@@ -1,13 +1,7 @@
 const express = require('express');
 const app = express();
-const stock = require('./stock.js');
-
-let server = app.listen(8777, function() {
-    console.log('server is running on port 8300');
-});
-
-let socket = require('socket.io');
-let io = socket(server);
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 io.origins(['https://project-frontend.jespernyhlenjs.me:443']);
 
@@ -54,3 +48,6 @@ setInterval(function() {
 
     io.emit('stocks', items);
 }, 500);
+
+server.listen(8777);
+console.log('Listening on 8777');
