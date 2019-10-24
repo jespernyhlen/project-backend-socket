@@ -17,6 +17,9 @@ var stock = {
             let priceInc = rateDiff * price;
             price = price - priceInc;
         }
+        if (price < 0) {
+            return 0;
+        }
         return Math.round(price * 100) / 100;
     }
 };
