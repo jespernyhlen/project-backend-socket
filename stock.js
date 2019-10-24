@@ -12,7 +12,7 @@ var stock = {
         let rate = input.rate;
         let variance = input.variance;
         let price = start * rate + variance * stock.randomAroundZero();
-        if (stockChance) {
+        if (stock.stockChance) {
             let rateDiff = input.rate - 1;
             let priceInc = rateDiff * price;
             price = price - priceInc;
