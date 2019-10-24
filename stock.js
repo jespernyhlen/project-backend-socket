@@ -4,7 +4,7 @@ var stock = {
     },
 
     stockChance: function() {
-        return Math.round(Math.random() * 30) === 1;
+        return Math.round(Math.random() * 10) === 1;
     },
 
     getStockPrice: function(input) {
@@ -12,7 +12,11 @@ var stock = {
         let rate = input.rate;
         let variance = input.variance;
         let price = start * rate + variance * stock.randomAroundZero();
-
+        if (stockChance) {
+            let rateDiff = input.rate - 1;
+            let priceInc = rateDiff * price;
+            price = price - priceInc;
+        }
         return Math.round(price * 100) / 100;
     }
 };
